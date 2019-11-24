@@ -1,0 +1,23 @@
+aside
+  position: relative
+  .aside_toggle
+    position: absolute
+    display: block
+    left: -52px
+    top: 13px
+    transform: rotate(-90deg)
+    background: #333
+    // +main_gradColor
+    color: $white
+    padding: 8px
+    border-radius: 8px 8px 0 0
+    box-shadow: -2px -2px 8px #999
+    transition: .3s
+    &::selection
+      background: transparent
+    &:hover
+      transition: .3s
+      cursor: pointer
+      background: tomato
+
+      
