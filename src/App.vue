@@ -1,18 +1,18 @@
 <template>
-  <div id="app">
+<div id="app">
     <!-- <app-header /> -->
     <!-- <nav> -->
-      <!-- <router-link to="/">Home</router-link> -->
-      <!-- <router-link to="/product">Product</router-link> -->
+    <!-- <router-link to="/">Home</router-link> -->
+    <!-- <router-link to="/product">Product</router-link> -->
     <!-- </nav> -->
     <router-view />
-  </div>
+</div>
 </template>
 
 <script>
 export default {
-  name: 'App'
-}
+    name: "App"
+};
 </script>
 
 <style>
@@ -20,41 +20,9 @@ export default {
 @import "https://fonts.googleapis.com/icon?family=Material+Icons%7CMaterial+Icons+Outlined";
 
 #app {
-  /* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
-  color: #2c3e50;
-  /* margin-top: 60px; */
+    /* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
 }
 </style>
-
-
-<!-- <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
-</template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
-</script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style> -->
