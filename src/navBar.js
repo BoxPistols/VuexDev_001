@@ -1,6 +1,5 @@
-//  TODO: import to main.js
-// Nav Toggle  Save to Setting statusto openor close
-export function navBar_Open() {
+//  Nav Toggle  Save to Setting statusto openor close
+function navBar_Open() {
 
     const target = document.querySelector('.grid-container')
     const btn = document.querySelector('.nav_toggle')
@@ -57,3 +56,5 @@ export function navBar_Open() {
         }
     })
 }
+
+window.onload = navBar_Open

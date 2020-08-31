@@ -5,96 +5,8 @@
         <!-- <button @click="decriment">Decrement</button> -->
 
         <div class="grid-container">
-            <header class="header">
-                <div class="contents">
-                    <div class="grd">
-                        <div class="grd_l-12 d_flex">
-                            <div class="org_header">
-                                <div class="mol_header-search">
-                                    <input class="atm_header-search" type="text" placeholder="Search" />
-                                </div>
-                                <div class="mol_header-item">
-                                    <div class="atm_header-item">
-                                        <a href="#">
-                                            <i class="material-icons-outlined">email</i>
-                                        </a>
-                                    </div>
-                                    <div class="atm_header-item">
-                                        <a href="#">
-                                            <i class="material-icons-outlined">notification_important</i>
-                                        </a>
-                                    </div>
-                                    <div class="atm_header-item">
-                                        <div class="img"></div>
-                                        <div class="text">MyName</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <nav class="nav">
-                <div class="nav_toggle">
-                    <svg width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100"
-                        xmlns="http://www.w3.org/2000/svg" fill="#333">
-                        <g>
-                            <path
-                                d="m63.801 55.5h-44.801c-3 0-5.5-2.5-5.5-5.5s2.5-5.5 5.5-5.5h44.898c3 0 5.5 2.5 5.5 5.5-0.097657 3-2.5 5.5-5.5977 5.5z" />
-                            <path
-                                d="m44.398 86.898h-25.398c-3 0-5.5-2.5-5.5-5.5s2.5-5.5 5.5-5.5h25.398c3 0 5.5 2.5 5.5 5.5 0 3.1016-2.5 5.5-5.5 5.5z" />
-                            <path
-                                d="m81.301 24h-62.301c-3 0-5.5-2.5-5.5-5.5s2.5-5.5 5.5-5.5h62.398c3 0 5.5 2.5 5.5 5.5-0.097657 3-2.5 5.5-5.5977 5.5z" />
-                        </g>
-                    </svg>
-                </div>
-                <div class="org_nav">
-                    <div class="mol_navRole">
-                        <div class="atm_navRole-img">
-                            <!-- <img src="" alt=""> -->
-                            <span>
-                                <i class="material-icons">equalizer</i>
-                            </span>
-                        </div>
-                        <div class="atm_navRole-name">AnyLogo</div>
-                    </div>
-
-                    <div class="mol_navList">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="material-icons">equalizer</i>
-                                    <span class="text">ItemName</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="material-icons">equalizer</i>
-                                    <span class="text">ItemName</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="material-icons">equalizer</i>
-                                    <span class="text">ItemName</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="material-icons">equalizer</i>
-                                    <span class="text">ItemName</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="material-icons">equalizer</i>
-                                    <span class="text">ItemName</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+            <Header />
+            <Nav />
             <article class="article">
                 <div class="contents">
                     <div class="row">
@@ -281,6 +193,8 @@
 </template>
 
 <script>
+    import Nav from "../components/Nav.vue";
+    import Header from "../components/Header.vue";
     import Chart from "../components/Chart.component.vue";
 
     export default {
@@ -297,7 +211,9 @@
             }
         },
         components: {
-            Chart
+            Chart,
+            Header,
+            Nav
         }
     };
 
@@ -308,4 +224,4 @@
     // = !this.showText     }   } }
 </script>
 
-<style lang="scss" scoped="scoped"></style>
+<style lang="scss"></style>
