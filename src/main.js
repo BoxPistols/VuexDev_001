@@ -7,9 +7,12 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import Header from './components/Header.vue'
 
-Vue.component('app-header', Header)
+// import Header from './components/Header.vue'
+import VueApexCharts from 'vue-apexcharts'
+Vue.component('apexchart', VueApexCharts)
+
+// Vue.component('app-header', Header)
 
 Vue.config.productionTip = false
 

@@ -1,5 +1,4 @@
 <template>
-
   <div class='home'>
     <!-- <h1>Home</h1>
           <h2>{{ $store.state.msg }}</h2>
@@ -196,6 +195,22 @@
           </div>
         </div>
 
+        <div class="contents">
+          <div class="row">
+            <div class="grd">
+              <div class="grd_l-12">
+                <div class="org_board">
+                  <div class="mol_board">
+                    <div class="mol_board-content">
+                     <Chart />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </article>
 
       <aside class="aside">
@@ -216,6 +231,7 @@
 </template>
 
 <script>
+import Chart from '../components/Chart.component.vue'
 
   export default {
     name: 'home',
@@ -228,7 +244,10 @@
       incriment() {
         return this.$store.state.incriment
       }
-    }
+    },
+    components: {
+      Chart
+    },
   }
 
   // import ModalMessageHeader from './alert-message.vue'
