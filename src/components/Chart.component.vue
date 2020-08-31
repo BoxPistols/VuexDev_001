@@ -3,11 +3,17 @@
         <div class="chart_org">
             <apexchart :width="width" height="350" :options="chartOptions" :series="series"></apexchart>
         </div>
+
         <div class="chart_org">
             <apexchart :width="width" height="350" :options="chartOptions2" :series="series2"></apexchart>
         </div>
+
         <div class="chart_org">
             <apexchart type="radialBar" height="350" :options="chartOptions3" :series="series3"></apexchart>
+        </div>
+
+        <div class="chart_org">
+            <apexchart type="bar" height="350" :options="chartOptions4" :series="series4"></apexchart>
         </div>
     </div>
 </template>
@@ -89,6 +95,18 @@ export default {
                             text: "Social Media"
                         }
                     }
+                ],
+                responsive: [
+                    {
+                        breakpoint: 800,
+                        options: {
+                            legend: {
+                                position: "bottom",
+                                offsetX: -10,
+                                offsetY: 0
+                            }
+                        }
+                    }
                 ]
             },
             /***
@@ -97,7 +115,7 @@ export default {
             series2: [
                 {
                     name: "Series 1",
-                    data: [80, 50, 30, 40, 100, 20]
+                    data: [85, 50, 30, 40, 100, 20]
                 }
             ],
             chartOptions2: {
@@ -140,15 +158,80 @@ export default {
                             total: {
                                 show: true,
                                 label: "Total"
-                                // formatter: function(w) {
-                                //     // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
-                                //     return 249;
-                                // }
                             }
                         }
                     }
                 },
                 labels: ["Apples", "Oranges", "Bananas", "Berries"]
+            },
+            /***
+             * Stack
+             */
+            series4: [
+                {
+                    name: "PRODUCT A",
+                    data: [44, 55, 41, 67, 22, 43]
+                },
+                {
+                    name: "PRODUCT B",
+                    data: [13, 23, 20, 8, 13, 27]
+                },
+                {
+                    name: "PRODUCT C",
+                    data: [11, 17, 15, 15, 21, 14]
+                },
+                {
+                    name: "PRODUCT D",
+                    data: [21, 7, 25, 13, 22, 8]
+                }
+            ],
+            chartOptions4: {
+                chart: {
+                    type: "bar",
+                    height: 350,
+                    stacked: true,
+                    toolbar: {
+                        show: true
+                    },
+                    zoom: {
+                        enabled: true
+                    }
+                },
+                responsive: [
+                    {
+                        breakpoint: 800,
+                        options: {
+                            legend: {
+                                position: "bottom",
+                                offsetX: -10,
+                                offsetY: 0
+                            }
+                        }
+                    }
+                ],
+                plotOptions: {
+                    bar: {
+                        horizontal: false
+                    }
+                },
+                xaxis: {
+                    type: "datetime",
+                    categories: [
+                        "01/01/2011 GMT",
+                        "01/02/2011 GMT",
+                        "01/03/2011 GMT",
+                        "01/04/2011 GMT",
+                        "01/05/2011 GMT",
+                        "01/06/2011 GMT"
+                    ]
+                },
+                legend: {
+                    position: "right",
+                    offsetY: 40
+                },
+                fill: {
+                    opacity: 1
+                }
             }
         };
     }
@@ -158,9 +241,15 @@ export default {
 <style lang="sass" scoped>
 .chart
     &_lay
-        display: flex
+        display: inline-flex
         flex-wrap: wrap
         justify-content: center
     &_org
-        padding: 24px 12px 12px
+        width: 100%
+        min-width: calc(768px / 2)
+        max-width: calc(1280px / 2 - 20px)
+        padding: 24px 0 12px
+        border-bottom: 1px solid #eee
+        &:nth-child(odd)
+            border-right: 1px solid #eee
 </style>
