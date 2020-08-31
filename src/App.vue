@@ -1,18 +1,16 @@
 <template>
-<div id="app">
-    <!-- <app-header /> -->
-    <!-- <nav> -->
-    <!-- <router-link to="/">Home</router-link> -->
-    <!-- <router-link to="/product">Product</router-link> -->
-    <!-- </nav> -->
-    <router-view />
-</div>
+    <div id="app">
+        <!-- <app-header /> -->
+        <!-- <nav> -->
+        <!-- <router-link to="/">Home</router-link> -->
+        <!-- <router-link to="/product">Product</router-link> -->
+        <!-- </nav> -->
+        <router-view />
+    </div>
 </template>
 
 <script>
-export default {
-    name: "App"
-};
+export default { name: "App" };
 </script>
 
 <style>

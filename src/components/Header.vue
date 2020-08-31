@@ -1,16 +1,15 @@
 <template>
-  <div id="">
-    <p>AAA</p>
-  </div>
+    <div id>
+        <p>AAA</p>
+    </div>
 </template>
 <script>
 export default {
-  data: () => ({
-  })
-}
+    data: () => ({})
+};
 </script>
 <style lang="sass" scoped>
 div
-  p
+p
     background: orange
 </style>
