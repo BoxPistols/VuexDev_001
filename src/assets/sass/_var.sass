@@ -2,25 +2,28 @@ $breakPoint: 768px
 
 $navWidth: 120px
 $white: rgba(255, 255, 255, 0.85)
+
 // $mainColor: rgba(41, 101, 163, .85)
 $mainColor: #04182baa
 
 $boxShadow: 2px 2px 2px #c4c4c4
 
 // Mixin
-@mixin main_gradColor
-  background-image: linear-gradient(to right bottom, #009688, #0d63cd)
+=main_gradColor
+    background-image: linear-gradient(to right bottom, #009688, #0d63cd)
 
-@mixin fx_center
-  display: flex
-  justify-content: center
-  align-items: center
+=fx_center
+    display: flex
+    justify-content: center
+    align-items: center
 
-@mixin boxShadow
-  border: 1px solid#d8dbdf80
-  box-shadow: $boxShadow
+=boxShadow
+    border: 1px solid #d8dbdf80
+    box-shadow: $boxShadow
+
 // Block
 .d_flex
-  display: flex
-  @media all and (max-width: $breakPoint)
-    display: block
+    display: flex
+
+    @media all and (max-width: $breakPoint)
+        display: block

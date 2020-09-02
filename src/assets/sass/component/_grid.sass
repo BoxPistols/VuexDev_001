@@ -1,46 +1,57 @@
 .contents
-  width: 100%
-  .row
-    margin-top: 24px
-    padding: 12px 24px 0
+    width: 100%
+
+    .row
+        margin-top: 24px
+        padding: 12px 24px 0
 
 .grd
-  // background: #000
-  .grd_l-12
-    width: 100%
-  .grd_l-4
-    max-width: calc(100% / 3)
-    width: 100%
-    &.md_l-12
-      @media all and (max-width: $breakPoint)
-        max-width: 100%
+    // background: #000
+    .grd_l-12
+        width: 100%
 
-  .lay_card
-    width: calc(100% + 24px)
-    margin: -12px
-    @media all and (max-width: $breakPoint)
-      display: flex
-      flex-direction: column
+    .grd_l-4
+        max-width: calc(100% / 3)
+        width: 100%
 
-  .org_card
-    display: flex
-    justify-content: center
-    .mol_card
-      margin: 12px
-      padding: 24px
-      border-radius: 4px
-      // box-shadow: 2px 2px 8px #ccc
-      +boxShadow
-      &-title
-        font-weight: 600
-        font-size: 2.4rem
-      &-content
-        font-size: 1.6rem
+        &.md_l-12
+            @media all and (max-width: $breakPoint)
+                max-width: 100%
 
-  .org_board
-    width: 100%
-    +boxShadow
-    border-radius: 6px
-    .mol_board
-      &-pd
-        padding: 24px
+    .lay_card
+        width: calc(100% + 24px)
+        margin: -12px
+
+        @media all and (max-width: $breakPoint)
+            display: flex
+            flex-direction: column
+
+    .org_card
+        display: flex
+        justify-content: center
+
+        .mol_card
+            margin: 12px
+            padding: 24px
+            border-radius: 4px
+
+            // box-shadow: 2px 2px 8px #ccc
+            +boxShadow
+
+            &-title
+                font-weight: 600
+                font-size: 2.4rem
+
+            &-content
+                font-size: 1.6rem
+
+    .org_board
+        width: 100%
+
+        +boxShadow
+
+        border-radius: 6px
+
+        .mol_board
+            &-pd
+                padding: 24px
