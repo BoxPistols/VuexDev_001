@@ -9,7 +9,7 @@
         "sass-lint": "sass-lint -c .sass-lint.yml -v"
     },
     "dependencies": {
-        "apexcharts": "^3.10.1",
+        "apexcharts": "^3.24.0",
         "core-js": "^3.3.2",
         "node-sass": "^4.13.1",
         "prettier": "^2.1.1",
