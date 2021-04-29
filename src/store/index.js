@@ -6,17 +6,16 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         msg: 'Hello Store index Msg',
-        counter: 0
+        counter: 0,
     },
     mutations: {
-        increment(state) {
-            state.counter++
+        increment(state, n) {
+            state.counter += n
         },
-        decrement(state) {
-            state.counter--
-        }
-
+        decrement(state, n) {
+            state.counter -= n
+        },
     },
     actions: {},
-    modules: {}
+    modules: {},
 })

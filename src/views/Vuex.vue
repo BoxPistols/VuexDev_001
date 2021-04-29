@@ -3,7 +3,7 @@
         <router-link to="/">Home</router-link>
 
         <h2>{{ $store.state.msg }}</h2>
-        <h3>{{ $store.state.counter }} </h3>
+        <h3>{{ $store.state.counter }}</h3>
         <button @click="setIncrement">Increment</button>
         <button @click="setDecrement">Derement</button>
     </div>
@@ -15,14 +15,14 @@ export default {
         return {}
     },
     methods: {
-        setIncrement(){
-            this.$store.commit('increment')
+        setIncrement() {
+            this.$store.commit('increment', 2)
         },
-        setDecrement(){
-            if(this.$store.state.counter > 0) {
-                this.$store.commit('decrement')
+        setDecrement() {
+            if (this.$store.state.counter > 0) {
+                this.$store.commit('decrement', 1)
             }
-        }
+        },
     },
 }
 </script>
