@@ -3,7 +3,7 @@ options:
     merge-default-rules: false
     max-warnings: 50
 files:
-    include: 'src/assets/sass/**/*.s+(a|c)ss'
+    include: "src/assets/sass/**/*.s+(a|c)ss"
 rules:
     extends-before-mixins: 2
     extends-before-declarations: 2

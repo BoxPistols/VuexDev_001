@@ -1,6 +1,6 @@
 <template>
     <nav class="nav">
-        <!-- <div class="nav_toggle">
+        <div class="nav_toggle">
             <svg
                 width="100pt"
                 height="100pt"
@@ -21,7 +21,7 @@
                     />
                 </g>
             </svg>
-        </div>-->
+        </div>
         <div class="org_nav">
             <div class="mol_navRole">
                 <div class="atm_navRole-img">
@@ -74,9 +74,9 @@
 <script>
 export default {
     data() {
-        return {};
-    }
-};
+        return {}
+    },
+}
 </script>
 
 <style lang="scss" scoped="scoped"></style>
