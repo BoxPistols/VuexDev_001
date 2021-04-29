@@ -1,6 +1,6 @@
-require('@/assets/sass/main.sass');
+require('@/assets/sass/main.sass')
 // import { sideBar_Open } from "./sideBar";
-require('./navBar.js');
+require('./navBar.js')
 
 import Vue from 'vue'
 import App from './App.vue'
@@ -15,7 +15,7 @@ Vue.config.productionTip = false
 new Vue({
     router,
     store,
-    render: h => h(App)
+    render: (h) => h(App),
 }).$mount('#app')
 
 // TODO: create  import file
@@ -28,13 +28,9 @@ export function sideBar_Open() {
     btn.addEventListener('click', () => {
         if (target.classList.contains('active_sideBar')) {
             // console.log("Yes");
-            target
-                .classList
-                .remove('active_sideBar');
+            target.classList.remove('active_sideBar')
         } else {
-            target
-                .classList
-                .add('active_sideBar');
+            target.classList.add('active_sideBar')
             // console.log("non");
         }
     })

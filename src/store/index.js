@@ -9,11 +9,20 @@ export default new Vuex.Store({
         counter: 0,
     },
     mutations: {
+        // for Object
+        countObj(state, obj) {
+            state.msg = obj.addMsg
+            state.counter += obj.addCount
+        },
+        // for methods
         increment(state, n) {
             state.counter += n
         },
         decrement(state, n) {
             state.counter -= n
+        },
+        reset(state) {
+            state.counter = 0
         },
     },
     actions: {},
