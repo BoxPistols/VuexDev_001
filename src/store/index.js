@@ -23,6 +23,7 @@ export default new Vuex.Store({
         },
         reset(state) {
             state.counter = 0
+            state.msg = 'Hello Store index Msg'
         },
     },
     actions: {},

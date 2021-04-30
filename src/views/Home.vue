@@ -1,9 +1,5 @@
 <template>
     <div class="home">
-        <!-- <h1>Home</h1> <h2>{{ $store.state.msg }}</h2> <p>{{ $store.state.counter
-        }}</p> <button @click="incriment">Increment</button>-->
-        <!-- <button @click="decriment">Decrement</button> -->
-
         <div class="grid-container">
             <Header />
             <Nav />
@@ -17,7 +13,8 @@
                                         <div class="org_card">
                                             <div class="mol_card">
                                                 <div class="mol_card-title">Step One</div>
-                                                <div class="mol_card-content">Lorem ipsum dolor sit amex consenter
+                                                <div class="mol_card-content">
+                                                    Lorem ipsum dolor sit amex consenter
                                                     adipisicing elif. Amt, esse?
                                                 </div>
                                             </div>
@@ -27,8 +24,10 @@
                                         <div class="org_card">
                                             <div class="mol_card">
                                                 <div class="mol_card-title">Step Two</div>
-                                                <div class="mol_card-content">Lorem ipsum dolor sit amex consenter
-                                                    adipisicing elif. Amt, esse?</div>
+                                                <div class="mol_card-content">
+                                                    Lorem ipsum dolor sit amex consenter
+                                                    adipisicing elif. Amt, esse?
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -36,8 +35,10 @@
                                         <div class="org_card">
                                             <div class="mol_card">
                                                 <div class="mol_card-title">Step Three</div>
-                                                <div class="mol_card-content">Lorem ipsum dolor sit amex consenter
-                                                    adipisicing elif. Amt, esse?</div>
+                                                <div class="mol_card-content">
+                                                    Lorem ipsum dolor sit amex consenter
+                                                    adipisicing elif. Amt, esse?
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -55,8 +56,7 @@
                                 <div class="org_board">
                                     <div class="mol_board-pd">
                                         <div class="mol_board-content">
-                                            <h3 class="mol_board-title">Board</h3>
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut commodi quae,
+                                            <h3 class="mol_board-title">Board</h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut commodi quae,
                                             quis alias pariatur voluptatem voluptatum recusandae maiores iure. Hic non
                                             soluta illo error debitis quaerat eveniet fuga architecto. Ipsa iusto
                                             suscipit nisi, vero ab accusamus, inventore totam magni animi eligendi ad!
@@ -193,35 +193,44 @@
 </template>
 
 <script>
-    import Nav from "../components/Nav.vue";
-    import Header from "../components/Header.vue";
-    import Chart from "../components/Chart.component.vue";
+import Nav from '../components/Nav.vue'
+import Header from '../components/Header.vue'
+import Chart from '../components/Chart.component.vue'
 
-    export default {
-        name: "home",
-        // methods: {   incriment() {     this.$store.commit('increment')   } }
-        data() {
-            return {
-                // TODO: table data here 1 - create array object, 2 - create json API
-            };
-        },
-        computed: {
-            incriment() {
-                return this.$store.state.incriment;
-            }
-        },
-        components: {
-            Chart,
-            Header,
-            Nav
+export default {
+    name: 'home',
+    // methods: {   incriment() {     this.$store.commit('increment')   } }
+    data() {
+        return {
+            // TODO: table data here 1 - create array object, 2 - create json API
+            vueAdminDarkMode: false,
         }
-    };
+    },
+    mounted() {
+        if (localStorage.vueAdminDarkMode) {
+            this.vueAdminDarkMode = JSON.parse(
+                localStorage.getItem('vueAdminDarkMode')
+            )
+        }
+    },
 
-    // import ModalMessageHeader from './alert-message.vue'
-    //
-    // export default {   props: {     title: String,   },   data() {     return {
-    // showText: true     }   },   methods: {     close: function() { this.showText
-    // = !this.showText     }   } }
+    computed: {
+        incriment() {
+            return this.$store.state.incriment
+        },
+    },
+    components: {
+        Chart,
+        Header,
+        Nav,
+    },
+}
+
+// import ModalMessageHeader from './alert-message.vue'
+//
+// export default {   props: {     title: String,   },   data() {     return {
+// showText: true     }   },   methods: {     close: function() { this.showText
+// = !this.showText     }   } }
 </script>
 
 <style lang="scss"></style>
