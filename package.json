@@ -6,7 +6,7 @@
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
-        "sass-lint": "sass-lint -c .sass-lint.yml -v"
+        "sass-lint": "sass-lint -c .sass-lint.yml -v -q"
     },
     "dependencies": {
         "apexcharts": "^3.24.0",

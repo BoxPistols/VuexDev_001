@@ -6,20 +6,20 @@
 .grid-container
     display: grid
     grid-template-columns: 160px 1fr 0px
-&.active
-    &_sideBar
-        grid-template-columns: 160px 1fr 180px
-    &.active_navBar
-        grid-template-columns: 60px 1fr 180px
-    &_navBar
-        grid-template-columns: 60px 1fr 0px
-    &.active_sideBar
-        grid-template-columns: 60px 1fr 180px
+    &.active
+        &_sideBar
+            grid-template-columns: 160px 1fr 180px
+        &.active_navBar
+            grid-template-columns: 60px 1fr 180px
+        &_navBar
+            grid-template-columns: 60px 1fr 0px
+        &.active_sideBar
+            grid-template-columns: 60px 1fr 180px
 
-        grid-template-rows: 40px 1fr 30px
-        min-height: 100vh
-        max-width: 100vw
-        overflow: hidden
+            grid-template-rows: 40px 1fr 30px
+            min-height: 100vh
+            max-width: 100vw
+            overflow: hidden
 
 header.header
     grid-column: 2 / 4
@@ -29,7 +29,6 @@ header.header
 article.article
     grid-column: 2 / 3
     grid-row: 2 / 3
-    // background-color: lightgray
     height: 100%
     padding: 24px 36px 24px 36px
     @media all and (max-width: $breakPoint)
@@ -41,37 +40,35 @@ aside.aside
     background: #ccc
 
 footer.footer
+    +fx_center
     grid-column: 2 / 4
     grid-row: 3 / 4
     background-color: lighten(gray, 45)
-    // text-align: center
-    +fx_center
     color: #999
     small
         font-size: .875rem
 
 @media all and (max-width: $breakPoint)
-.grid-container
-    grid-template-columns: 1fr
-    grid-template-rows: auto
-    display: block
+    .grid-container
+        grid-template-columns: 1fr
+        grid-template-rows: auto
+        display: block
 
-    header, article, nav, aside, footer
-        grid-column: 1
-        grid-row: auto
+        header, article, nav, aside, footer
+            grid-column: 1
+            grid-row: auto
 
-    header
-        order: 1
+        header
+            order: 1
 
-    article
-        order: 3
+        article
+            order: 3
 
-    nav
-        order: 2
-      // display: none
+        nav
+            order: 2
 
-    aside
-        order: 4
+        aside
+            order: 4
 
-    footer
-        order: 5
+        footer
+            order: 5

@@ -124,4 +124,8 @@ export default {
             font-size: 12px;
         }
     }
+    input[type='radio']:checked + label,
+    input[type='checkbox']:checked + label {
+        background: none;
+    }
 </style>

@@ -27,7 +27,7 @@ indentation:
     - - size: 2
 
 property-sort-order:
-    - 1
+    - 1error  Please check validity of the block starting from line
     - order:
           - display
           - margin
