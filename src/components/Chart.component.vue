@@ -23,13 +23,14 @@
 // VueApexCharts)
 
 export default {
-    data: function() {
+    data: function () {
         return {
-            width: 600,
+            // width: 600,
+            width: '100%',
             series: [
                 {
-                    name: "Website Blog",
-                    type: "column",
+                    name: 'Website Blog',
+                    type: 'column',
                     data: [
                         440,
                         505,
@@ -42,100 +43,102 @@ export default {
                         752,
                         320,
                         257,
-                        160
-                    ]
+                        160,
+                    ],
                 },
                 {
-                    name: "Social Media",
-                    type: "line",
-                    data: [23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16]
-                }
+                    name: 'Social Media',
+                    type: 'line',
+                    data: [23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16],
+                },
             ],
             chartOptions: {
                 chart: {
+                    width: '100%',
                     height: 350,
-                    type: "line"
+                    type: 'line',
                 },
                 stroke: {
-                    width: [0, 4]
+                    width: [0, 4],
                 },
                 title: {
-                    text: "Traffic Sources"
+                    text: 'Traffic Sources',
                 },
                 dataLabels: {
                     enabled: true,
-                    enabledOnSeries: [1]
+                    enabledOnSeries: [1],
                 },
                 labels: [
-                    "01 Jan 2001",
-                    "02 Jan 2001",
-                    "03 Jan 2001",
-                    "04 Jan 2001",
-                    "05 Jan 2001",
-                    "06 Jan 2001",
-                    "07 Jan 2001",
-                    "08 Jan 2001",
-                    "09 Jan 2001",
-                    "10 Jan 2001",
-                    "11 Jan 2001",
-                    "12 Jan 2001"
+                    '01 Jan 2001',
+                    '02 Jan 2001',
+                    '03 Jan 2001',
+                    '04 Jan 2001',
+                    '05 Jan 2001',
+                    '06 Jan 2001',
+                    '07 Jan 2001',
+                    '08 Jan 2001',
+                    '09 Jan 2001',
+                    '10 Jan 2001',
+                    '11 Jan 2001',
+                    '12 Jan 2001',
                 ],
                 xaxis: {
-                    type: "datetime"
+                    type: 'datetime',
                 },
                 yaxis: [
                     {
                         title: {
-                            text: "Website Blog"
-                        }
+                            text: 'Website Blog',
+                        },
                     },
                     {
                         opposite: true,
                         title: {
-                            text: "Social Media"
-                        }
-                    }
+                            text: 'Social Media',
+                        },
+                    },
                 ],
                 responsive: [
                     {
                         breakpoint: 800,
                         options: {
                             legend: {
-                                position: "bottom",
+                                position: 'bottom',
                                 offsetX: -10,
-                                offsetY: 0
-                            }
-                        }
-                    }
-                ]
+                                offsetY: 0,
+                            },
+                        },
+                    },
+                ],
             },
             /***
              * Radar
              */
             series2: [
                 {
-                    name: "Series 1",
-                    data: [85, 50, 30, 40, 100, 20]
-                }
+                    name: 'Series 1',
+                    data: [85, 50, 30, 40, 100, 20],
+                },
             ],
             chartOptions2: {
                 chart: {
+                    width: '100%',
                     height: 350,
-                    type: "radar"
+                    type: 'radar',
                 },
                 title: {
-                    text: "Basic Radar Chart"
+                    text: 'Basic Radar Chart',
                 },
                 xaxis: {
                     categories: [
-                        "January",
-                        "February",
-                        "March",
-                        "April",
-                        "May",
-                        "June"
-                    ]
-                }
+                        'January',
+                        'February',
+                        'March',
+                        'April',
+                        'May',
+                        'June',
+                    ],
+                },
             },
             /***
              * Radial Bar
@@ -143,99 +146,101 @@ export default {
             series3: [44, 55, 67, 83],
             chartOptions3: {
                 chart: {
+                    width: '100%',
                     height: 350,
-                    type: "radialBar"
+                    type: 'radialBar',
                 },
                 plotOptions: {
                     radialBar: {
                         dataLabels: {
                             name: {
-                                fontSize: "22px"
+                                fontSize: '22px',
                             },
                             value: {
-                                fontSize: "16px"
+                                fontSize: '16px',
                             },
                             total: {
                                 show: true,
-                                label: "Total"
-                            }
-                        }
-                    }
+                                label: 'Total',
+                            },
+                        },
+                    },
                 },
-                labels: ["Apples", "Oranges", "Bananas", "Berries"]
+                labels: ['Apples', 'Oranges', 'Bananas', 'Berries'],
             },
             /***
              * Stack
              */
             series4: [
                 {
-                    name: "PRODUCT A",
-                    data: [44, 55, 41, 67, 22, 43]
+                    name: 'PRODUCT A',
+                    data: [44, 55, 41, 67, 22, 43],
                 },
                 {
-                    name: "PRODUCT B",
-                    data: [13, 23, 20, 8, 13, 27]
+                    name: 'PRODUCT B',
+                    data: [13, 23, 20, 8, 13, 27],
                 },
                 {
-                    name: "PRODUCT C",
-                    data: [11, 17, 15, 15, 21, 14]
+                    name: 'PRODUCT C',
+                    data: [11, 17, 15, 15, 21, 14],
                 },
                 {
-                    name: "PRODUCT D",
-                    data: [21, 7, 25, 13, 22, 8]
-                }
+                    name: 'PRODUCT D',
+                    data: [21, 7, 25, 13, 22, 8],
+                },
             ],
             chartOptions4: {
                 chart: {
-                    type: "bar",
+                    type: 'bar',
+                    width: '100%',
                     height: 350,
                     stacked: true,
                     toolbar: {
-                        show: true
+                        show: true,
                     },
                     zoom: {
-                        enabled: true
-                    }
+                        enabled: true,
+                    },
                 },
                 responsive: [
                     {
                         breakpoint: 800,
                         options: {
                             legend: {
-                                position: "bottom",
+                                position: 'bottom',
                                 offsetX: -10,
-                                offsetY: 0
-                            }
-                        }
-                    }
+                                offsetY: 0,
+                            },
+                        },
+                    },
                 ],
                 plotOptions: {
                     bar: {
-                        horizontal: false
-                    }
+                        horizontal: false,
+                    },
                 },
                 xaxis: {
-                    type: "datetime",
+                    type: 'datetime',
                     categories: [
-                        "01/01/2011 GMT",
-                        "01/02/2011 GMT",
-                        "01/03/2011 GMT",
-                        "01/04/2011 GMT",
-                        "01/05/2011 GMT",
-                        "01/06/2011 GMT"
-                    ]
+                        '01/01/2011 GMT',
+                        '01/02/2011 GMT',
+                        '01/03/2011 GMT',
+                        '01/04/2011 GMT',
+                        '01/05/2011 GMT',
+                        '01/06/2011 GMT',
+                    ],
                 },
                 legend: {
-                    position: "right",
-                    offsetY: 40
+                    position: 'right',
+                    offsetY: 40,
                 },
                 fill: {
-                    opacity: 1
-                }
-            }
-        };
-    }
-};
+                    opacity: 1,
+                },
+            },
+        }
+    },
+}
 </script>
 
 <style lang="sass" scoped>
@@ -245,9 +250,9 @@ export default {
         flex-wrap: wrap
         justify-content: center
     &_org
-        width: 100%
+        width: calc(100% / 2)
         min-width: calc(768px / 2)
-        max-width: calc(1280px / 2 - 20px)
+        // max-width: calc(1280px / 2 - 20px)
         padding: 24px 0 12px
         border-bottom: 1px solid #eee
         &:nth-child(odd)

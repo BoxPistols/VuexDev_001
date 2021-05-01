@@ -10,10 +10,7 @@ nav.nav
     &.min_nav
         .org_nav
             .mol_navRole
-                font-size: 0
-
-                span
-                    display: none
+                font-size: 12px
 
     .nav_toggle
         +fx-center
@@ -48,19 +45,23 @@ nav.nav
             .atm_navRole
                 &-name
                     color: $white
+                    // font-size:  0
 
                 &-img
                     margin: 0 8px
 
+                    >img
+                        display: block
+                        max-width: 24px
+                        width: 100%
+                /* ===== Side Nav Role/
                     > span
                         background-color: #fff
                         display: block
                         width: 32px
                         height: 32px
-
-                        //margin-right: 12px
                         border-radius: 50%
-
+                    /Side Nav Role ===== */
         .mol_navList
             > ul
                 // padding: 24px

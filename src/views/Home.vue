@@ -233,4 +233,15 @@ export default {
 // = !this.showText     }   } }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+    .mol_board-content {
+        overflow: hidden;
+        table {
+            display: table;
+            @media only screen and (max-width: 768px) {
+                display: block;
+            }
+            overflow: scroll;
+        }
+    }
+</style>

@@ -28,10 +28,11 @@
         <div class="org_nav">
             <div class="mol_navRole">
                 <div class="atm_navRole-img">
-                    <!-- <img src="" alt=""> -->
-                    <span>
-                        <!-- <i class="material-icons">equalizer</i> -->
-                    </span>
+                    <img src="../assets/logo.png" alt />
+                    <!-- if Side Nav Role has icon -->
+                    <!-- <span>
+                        <i class="material-icons">equalizer</i>
+                    </span>-->
                 </div>
                 <div class="atm_navRole-name">AnyLogo</div>
             </div>
