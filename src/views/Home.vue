@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <div class="grid-container">
+        <div :class="['grid-container', cont_width ? 'active_navBar' : '' ]">
             <Header />
             <Nav />
             <article class="article">
@@ -203,6 +203,8 @@ export default {
     data() {
         return {
             // TODO: table data here 1 - create array object, 2 - create json API
+            // FIXME! cont_width = contents width with wath sync Store
+            cont_width: this.$store.state.navStorage,
         }
     },
     computed: {
@@ -225,6 +227,12 @@ export default {
 </script>
 
 <style lang="scss">
+    .cont {
+        color: orange;
+        &.on {
+            color: teal;
+        }
+    }
     .mol_board-content {
         overflow: hidden;
         table {

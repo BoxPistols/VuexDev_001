@@ -1,7 +1,7 @@
 <template>
-    <nav :class="['nav', vueAdminDarkMode ? 'min_nav' : ' ' ]">
+    <nav :class="['nav', vueAdmin_NavToMin ? 'min_nav' : ' ' ]">
         <div class="nav_toggle">
-            <input type="checkbox" id="theme-toggle" v-model="vueAdminDarkMode" />
+            <input type="checkbox" id="theme-toggle" v-model="vueAdmin_NavToMin" />
             <label for="theme-toggle">
                 <svg
                     width="100pt"
@@ -79,22 +79,23 @@
 export default {
     data() {
         return {
-            vueAdminDarkMode: false,
+            vueAdmin_NavToMin: false,
         }
     },
     mounted() {
-        if (localStorage.vueAdminDarkMode) {
-            this.vueAdminDarkMode = JSON.parse(
-                localStorage.getItem('vueAdminDarkMode')
+        if (localStorage.vueAdmin_NavToMin) {
+            this.vueAdmin_NavToMin = JSON.parse(
+                localStorage.getItem('vueAdmin_NavToMin')
             )
         }
     },
     watch: {
-        vueAdminDarkMode() {
+        vueAdmin_NavToMin() {
             localStorage.setItem(
-                'vueAdminDarkMode',
-                JSON.stringify(this.vueAdminDarkMode)
+                'vueAdmin_NavToMin',
+                JSON.stringify(this.vueAdmin_NavToMin)
             )
+            this.$store.commit('navStorage', this.vueAdmin_NavToMin)
         },
     },
 }
