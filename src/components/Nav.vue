@@ -103,6 +103,15 @@ export default {
 <style lang="scss" scoped="scoped">
     nav.min_nav {
         width: 80px;
+        .org_nav {
+            .mol_navRole {
+                font-size: 12px;
+                .atm_navRole-name {
+                    font-size: 0;
+                }
+            }
+        }
+
         li a {
             display: flex;
             flex-direction: column;
@@ -124,6 +133,7 @@ export default {
             font-size: 12px;
         }
     }
+
     input[type='radio']:checked + label,
     input[type='checkbox']:checked + label {
         background: none;
