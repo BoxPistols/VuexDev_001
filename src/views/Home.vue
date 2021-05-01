@@ -203,17 +203,8 @@ export default {
     data() {
         return {
             // TODO: table data here 1 - create array object, 2 - create json API
-            vueAdminDarkMode: false,
         }
     },
-    mounted() {
-        if (localStorage.vueAdminDarkMode) {
-            this.vueAdminDarkMode = JSON.parse(
-                localStorage.getItem('vueAdminDarkMode')
-            )
-        }
-    },
-
     computed: {
         incriment() {
             return this.$store.state.incriment
@@ -221,8 +212,8 @@ export default {
     },
     components: {
         Chart,
-        Header,
         Nav,
+        Header,
     },
 }
 
