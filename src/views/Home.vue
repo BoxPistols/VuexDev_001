@@ -177,7 +177,10 @@
             </article>
 
             <aside class="aside">
+                <!-- @click="openSideMenuRight" -->
                 <div class="aside_toggle">MENU</div>
+                <!-- eslint-disable-next-line vue/valid-v-model -->
+                <!-- v-model="$store.state.toggleSideMenuRightDrawer" -->
                 <div class="contents">
                     <div class="row">
                         <p>Side Contents</p>
@@ -206,6 +209,11 @@ export default {
             // FIXME! cont_width = contents width with wath sync Store
             cont_width: this.$store.state.navStorage,
         }
+    },
+    methods: {
+        // openSideMenuRight() {
+        //     this.$store.dispatch('toggleSideMenuRightDrawer')
+        // },
     },
     computed: {
         incriment() {

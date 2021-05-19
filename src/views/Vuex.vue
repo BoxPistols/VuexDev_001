@@ -1,9 +1,12 @@
 <template>
     <div class="Vuex">
-        <router-link to="/">Home</router-link>
+        <h1>Vuex</h1>
+        <h2>
+            <router-link to="/">Home</router-link>
+        </h2>
 
+        <h3>Counter</h3>
         <div class="keyNum">{{ keyNum }}</div>
-
         <h2>{{ $store.state.msg }}</h2>
         <h3>{{ $store.state.counter }}</h3>
         <button @click="setReset">setReset</button>
@@ -12,6 +15,12 @@
         <button @click="setObj">setObj</button>
         <button @click="setObj2">setObj2</button>
         <!-- <button @click.shift="setObj">setObj + Shift</button> -->
+        <hr class="line" />
+        <h3>ReTry</h3>
+        <p>{{ setNum }}</p>
+        <p>
+            <button class="btn" @click="incNum">Inc</button>
+        </p>
     </div>
 </template>
 
@@ -22,7 +31,15 @@ export default {
             keyNum: 'keyNum ',
         }
     },
+    computed: {
+        setNum() {
+            return this.$store.state.num
+        },
+    },
     methods: {
+        incNum() {
+            this.$store.state.num++
+        },
         setObj() {
             this.$store.commit({
                 type: 'countObj',
@@ -74,4 +91,6 @@ export default {
 <style lang="sass" scoped>
 .Vuex
     padding: 24px 32px
+    .line
+        margin:  24px 0
 </style>
