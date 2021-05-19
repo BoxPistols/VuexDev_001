@@ -9,7 +9,7 @@ export default new Vuex.Store({
         msg: 'Hello Store index Msg',
         counter: 0,
         navStorage: false,
-        num: 77,
+        num: 0,
         // sideMenuRightDrawer: false,
     },
     mutations: {
@@ -40,6 +40,9 @@ export default new Vuex.Store({
         numView (state) {
             state.num
         },
+    },
+    getters: {
+        doubleNum: (state) => state.num * 2,
     },
     actions: {
         // toggleSideMenuRightDrawer ({ commit }) {

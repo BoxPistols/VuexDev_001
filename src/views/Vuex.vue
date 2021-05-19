@@ -18,8 +18,10 @@
         <hr class="line" />
         <h3>ReTry</h3>
         <p>{{ setNum }}</p>
+        <p>{{ doubleCount }}</p>
         <p>
             <button class="btn" @click="incNum">Inc</button>
+            <!-- <button class="btn" @click="doubleCount">doubleCount</button> -->
         </p>
     </div>
 </template>
@@ -34,6 +36,9 @@ export default {
     computed: {
         setNum() {
             return this.$store.state.num
+        },
+        doubleCount() {
+            return this.$store.getters.doubleNum
         },
     },
     methods: {
