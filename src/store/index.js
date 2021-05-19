@@ -43,6 +43,7 @@ export default new Vuex.Store({
     },
     getters: {
         doubleNum: (state) => state.num * 2,
+        tripleNum: (state) => state.num * 3,
     },
     actions: {
         // toggleSideMenuRightDrawer ({ commit }) {

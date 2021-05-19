@@ -18,7 +18,8 @@
         <hr class="line" />
         <h3>ReTry</h3>
         <p>{{ setNum }}</p>
-        <p>{{ doubleCount }}</p>
+        <p>{{ double }}</p>
+        <p>{{ triple }}</p>
         <p>
             <button class="btn" @click="incNum">Inc</button>
             <!-- <button class="btn" @click="doubleCount">doubleCount</button> -->
@@ -27,6 +28,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
     data() {
         return {
@@ -34,6 +36,11 @@ export default {
         }
     },
     computed: {
+        // ...mapGetters(['doubleNum', 'tripleNum']),
+        ...mapGetters({
+            double: 'doubleNum',
+            triple: 'tripleNum',
+        }),
         setNum() {
             return this.$store.state.num
         },
