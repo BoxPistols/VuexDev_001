@@ -13,6 +13,12 @@ export default new Vuex.Store({
         // sideMenuRightDrawer: false,
     },
     mutations: {
+        inc2 (state, n) {
+            state.num = state.num + n
+        },
+        reset2 (state) {
+            state.num = 0
+        },
         //
         // toggleSideMenuRightDrawer (state) {
         //     state.sideMenuRightDrawer = !state.sideMenuRightDrawer

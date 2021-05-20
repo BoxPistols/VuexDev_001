@@ -17,11 +17,13 @@
         <!-- <button @click.shift="setObj">setObj + Shift</button> -->
         <hr class="line" />
         <h3>ReTry</h3>
-        <p>{{ setNum }}</p>
+        <p>num: {{ setNum }}</p>
         <p>{{ double }}</p>
         <p>{{ triple }}</p>
         <p>
             <button class="btn" @click="incNum">Inc</button>
+            <button class="btn" @click="inc2">inc2</button>
+            <button class="btn" @click="reset2 ">reset2</button>
             <!-- <button class="btn" @click="doubleCount">doubleCount</button> -->
         </p>
     </div>
@@ -49,6 +51,13 @@ export default {
         },
     },
     methods: {
+        inc2() {
+            this.$store.commit('inc2', 100)
+        },
+        reset() {
+            this.$store.commit('reset2')
+        },
+        // ...mapMutations([('inc2', 100), 'reset2']), // don't move
         incNum() {
             this.$store.state.num++
         },
