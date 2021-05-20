@@ -24,7 +24,7 @@
             <button class="btn" @click="incNum">Inc</button>
             <button class="btn" @click="inc2">inc2</button>
             <button class="btn" @click="reset2">reset2</button>
-            <button class="btn" @click="incAction">incAction</button>
+            <button class="btn" @click="incAction(4)">incAction</button>
             <!-- <button class="btn" @click="doubleCount">doubleCount</button> -->
         </p>
     </div>
@@ -52,8 +52,8 @@ export default {
         },
     },
     methods: {
-        incAction() {
-            this.$store.dispatch('incAction')
+        incAction(x) {
+            this.$store.dispatch('incAction', x)
         },
         inc2() {
             this.$store.commit('inc2', 100)

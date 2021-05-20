@@ -19,8 +19,8 @@ export default new Vuex.Store({
         reset2 (state) {
             state.num = 0
         },
-        oneQuarter (state) {
-            state.num = state.num / 4
+        division (state, val) {
+            state.num = state.num / val
         },
         //
         // toggleSideMenuRightDrawer (state) {
@@ -55,8 +55,8 @@ export default new Vuex.Store({
         tripleNum: (state) => state.num * 3,
     },
     actions: {
-        incAction (context) {
-            context.commit('oneQuarter')
+        incAction (context, val) {
+            context.commit('division', val)
         },
         // toggleSideMenuRightDrawer ({ commit }) {
         //     commit('toggleSideMenuRightDrawer')
