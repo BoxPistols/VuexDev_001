@@ -23,7 +23,8 @@
         <p>
             <button class="btn" @click="incNum">Inc</button>
             <button class="btn" @click="inc2">inc2</button>
-            <button class="btn" @click="reset2 ">reset2</button>
+            <button class="btn" @click="reset2">reset2</button>
+            <button class="btn" @click="incAction">incAction</button>
             <!-- <button class="btn" @click="doubleCount">doubleCount</button> -->
         </p>
     </div>
@@ -51,10 +52,13 @@ export default {
         },
     },
     methods: {
+        incAction() {
+            this.$store.dispatch('incAction')
+        },
         inc2() {
             this.$store.commit('inc2', 100)
         },
-        reset() {
+        reset2() {
             this.$store.commit('reset2')
         },
         // ...mapMutations([('inc2', 100), 'reset2']), // don't move
