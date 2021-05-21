@@ -1,5 +1,7 @@
 <template>
     <div class="home">
+        <p>state {{ stateActive }}</p>
+        <!-- <button @click="toggleMenu">toggleMenu</button> -->
         <div :class="['grid-container', cont_width ? 'active_navBar' : '' ]">
             <Header />
             <Nav />
@@ -178,7 +180,7 @@
 
             <aside class="aside">
                 <!-- @click="openSideMenuRight" -->
-                <div :class="['aside_toggle', { 'open' : isActive}]" @click="openSideMenuRight">MENU</div>
+                <div :class="['aside_toggle', { 'open' : isActive}]" @click="toggleMenu">MENU</div>
                 <!-- eslint-disable-next-line vue/valid-v-model -->
                 <!-- v-model="$store.state.toggleSideMenuRightDrawer" -->
                 <div class="side-contents">
@@ -202,22 +204,30 @@ import Chart from '../components/Chart.component.vue'
 
 export default {
     name: 'home',
-    // methods: {   incriment() {     this.$store.commit('increment')   } }
     data() {
         return {
-            // TODO: table data here 1 - create array object, 2 - create json API
-            // FIXME! cont_width = contents width with wath sync Store
             cont_width: this.$store.state.navStorage,
-            isActive: false,
+            isActive: this.$store.state.active,
         }
     },
     methods: {
-        openSideMenuRight() {
+        // toggleMenu() {
+        //     // this.isActive = !this.isActive
+        //     // this.isActive = this.$store.state('active')
+        //     this.$store.commit('toggleMenu')
+        // },
+        toggleMenu() {
             this.isActive = !this.isActive
-            // this.$store.dispatch('toggleSideMenuRightDrawer')
+            this.$store.commit('toggleMenu')
         },
     },
     computed: {
+        stateActive() {
+            return this.$store.state.active
+        },
+        stateMenu() {
+            return this.$store.state.menuOpen
+        },
         incriment() {
             return this.$store.state.incriment
         },

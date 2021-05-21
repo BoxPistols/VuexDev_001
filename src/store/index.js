@@ -11,8 +11,16 @@ export default new Vuex.Store({
         navStorage: false,
         num: 0,
         sideMenuRightDrawer: false,
+        menuOpen: false,
+        active: true,
     },
     mutations: {
+        toggleMenu (state) {
+            state.active = !state.active
+        },
+        resetToggle (state) {
+            state.menuOpen = false
+        },
         inc2 (state, n) {
             state.num = state.num + n
         },
@@ -54,6 +62,9 @@ export default new Vuex.Store({
         tripleNum: (state) => state.num * 3,
     },
     actions: {
+        // toggleMenu (context) {
+        //     context.commit('menuOpen')
+        // },
         division (context, val) {
             context.commit('division', val)
         },
