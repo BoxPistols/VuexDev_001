@@ -55,7 +55,7 @@ export default new Vuex.Store({
         tripleNum: (state) => state.num * 3,
     },
     actions: {
-        incAction (context, val) {
+        division (context, val) {
             context.commit('division', val)
         },
         // toggleSideMenuRightDrawer ({ commit }) {

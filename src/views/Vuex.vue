@@ -6,7 +6,9 @@
         </h2>
 
         <h3>Counter</h3>
-        <div class="keyNum">{{ keyNum }}</div>
+        <div class="keyNum">
+            <b>keyCode: {{ keyNum }}</b>
+        </div>
         <h2>{{ $store.state.msg }}</h2>
         <h3>{{ $store.state.counter }}</h3>
         <button @click="setReset">setReset</button>
@@ -22,16 +24,17 @@
         <p>{{ triple }}</p>
         <p>
             <button class="btn" @click="incNum">Inc</button>
-            <button class="btn" @click="inc2">inc2</button>
+            <button class="btn" @click="inc2(100)">inc2</button>
             <button class="btn" @click="reset2">reset2</button>
-            <button class="btn" @click="incAction(4)">incAction</button>
+            <button class="btn" @click="division(4)">division</button>
             <!-- <button class="btn" @click="doubleCount">doubleCount</button> -->
         </p>
     </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapMutations, mapGetters, mapActions } from 'vuex'
+
 export default {
     data() {
         return {
@@ -39,7 +42,6 @@ export default {
         }
     },
     computed: {
-        // ...mapGetters(['doubleNum', 'tripleNum']),
         ...mapGetters({
             double: 'doubleNum',
             triple: 'tripleNum',
@@ -52,16 +54,17 @@ export default {
         },
     },
     methods: {
-        incAction(x) {
-            this.$store.dispatch('incAction', x)
-        },
-        inc2() {
-            this.$store.commit('inc2', 100)
-        },
-        reset2() {
-            this.$store.commit('reset2')
-        },
-        // ...mapMutations([('inc2', 100), 'reset2']), // don't move
+        ...mapActions(['division']),
+        // division(x) {
+        //     this.$store.dispatch('division', x)
+        // },
+        // inc2() {
+        //     this.$store.commit('inc2', 100)
+        // },
+        // reset2() {
+        //     this.$store.commit('reset2')
+        // },
+        ...mapMutations(['inc2', 'reset2']),
         incNum() {
             this.$store.state.num++
         },
@@ -92,15 +95,15 @@ export default {
         setReset() {
             this.$store.commit('reset')
         },
-        // keyAction(e) {
-        //     if (e.keyCode == 32) {
-        //         this.setReset()
-        //     } else if (e.keyCode == 91) {
-        //         this.setDecrement()
-        //     }
-        //     //キーコードの表示
-        //     this.keyNum = e.keyCode
-        // },
+        //キーコードの表示
+        keyAction(e) {
+            if (e.keyCode == 8) {
+                this.setReset()
+            } else if (e.keyCode == 32) {
+                this.setIncrement()
+            }
+            this.keyNum = e.keyCode
+        },
     },
     created() {
         //キーコードによる動作の登録
@@ -116,6 +119,8 @@ export default {
 <style lang="sass" scoped>
 .Vuex
     padding: 24px 32px
+    >*
+        line-height: 1.85
     .line
         margin:  24px 0
 </style>
