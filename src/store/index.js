@@ -10,7 +10,7 @@ export default new Vuex.Store({
         counter: 0,
         navStorage: false,
         num: 0,
-        // sideMenuRightDrawer: false,
+        sideMenuRightDrawer: false,
     },
     mutations: {
         inc2 (state, n) {
@@ -22,10 +22,9 @@ export default new Vuex.Store({
         division (state, val) {
             state.num = state.num / val
         },
-        //
-        // toggleSideMenuRightDrawer (state) {
-        //     state.sideMenuRightDrawer = !state.sideMenuRightDrawer
-        // },
+        toggleSideMenuRightDrawer (state) {
+            state.sideMenuRightDrawer = true
+        },
         // for Object
         countObj (state, obj) {
             state.msg = obj.addMsg
@@ -58,9 +57,9 @@ export default new Vuex.Store({
         division (context, val) {
             context.commit('division', val)
         },
-        // toggleSideMenuRightDrawer ({ commit }) {
-        //     commit('toggleSideMenuRightDrawer')
-        // },
+        toggleSideMenuRightDrawer (context) {
+            context.commit('toggleSideMenuRightDrawer')
+        },
     },
     modules: {},
     plugins: [createPersistedState()],

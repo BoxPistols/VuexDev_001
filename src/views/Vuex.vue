@@ -1,5 +1,6 @@
 <template>
     <div class="Vuex">
+
         <h1>Vuex</h1>
         <h2>
             <router-link to="/">Home</router-link>

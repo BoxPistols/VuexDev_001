@@ -178,10 +178,10 @@
 
             <aside class="aside">
                 <!-- @click="openSideMenuRight" -->
-                <div class="aside_toggle">MENU</div>
+                <div :class="['aside_toggle', { 'open' : isActive}]" @click="openSideMenuRight">MENU</div>
                 <!-- eslint-disable-next-line vue/valid-v-model -->
                 <!-- v-model="$store.state.toggleSideMenuRightDrawer" -->
-                <div class="contents">
+                <div class="side-contents">
                     <div class="row">
                         <p>Side Contents</p>
                     </div>
@@ -208,12 +208,14 @@ export default {
             // TODO: table data here 1 - create array object, 2 - create json API
             // FIXME! cont_width = contents width with wath sync Store
             cont_width: this.$store.state.navStorage,
+            isActive: false,
         }
     },
     methods: {
-        // openSideMenuRight() {
-        //     this.$store.dispatch('toggleSideMenuRightDrawer')
-        // },
+        openSideMenuRight() {
+            this.isActive = !this.isActive
+            // this.$store.dispatch('toggleSideMenuRightDrawer')
+        },
     },
     computed: {
         incriment() {
@@ -250,5 +252,19 @@ export default {
             }
             overflow: scroll;
         }
+    }
+    .open + .side-contents {
+        position: absolute;
+        right: 0%;
+        background: rgb(235 226 226 / 79%);
+        display: block;
+        min-height: 100vh;
+        left: auto;
+        top: 70px;
+        bottom: 100%;
+        padding: 12px 11px;
+        min-width: 180px;
+        height: 100%;
+        z-index: 2;
     }
 </style>
