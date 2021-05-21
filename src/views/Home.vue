@@ -26,7 +26,7 @@
                                         <div class="org_card">
                                             <div class="mol_card">
                                                 <div class="mol_card-title">Step Two</div>
-                                                <div class="mol_card-content">
+                                                <div lass="mol_card-content">
                                                     Lorem ipsum dolor sit amex consenter
                                                     adipisicing elif. Amt, esse?
                                                 </div>

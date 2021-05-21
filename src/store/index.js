@@ -6,7 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        msg: 'Hello Store index Msg',
+        msg: '',
         counter: 0,
         navStorage: false,
         num: 0,
@@ -51,15 +51,19 @@ export default new Vuex.Store({
         },
         reset (state) {
             state.counter = 0
-            state.msg = 'Hello Store index Msg'
+            state.msg = ''
         },
         numView (state) {
             state.num
+        },
+        updateMsg (state, newMsg) {
+            state.msg = newMsg
         },
     },
     getters: {
         doubleNum: (state) => state.num * 2,
         tripleNum: (state) => state.num * 3,
+        msg: (state) => state.msg,
     },
     actions: {
         // toggleMenu (context) {
@@ -70,6 +74,9 @@ export default new Vuex.Store({
         },
         toggleSideMenuRightDrawer (context) {
             context.commit('toggleSideMenuRightDrawer')
+        },
+        updateMsg (context, newMsg) {
+            context.commit('updateMsg', newMsg)
         },
     },
     modules: {},

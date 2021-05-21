@@ -1,6 +1,5 @@
 <template>
     <div class="Vuex">
-
         <h1>Vuex</h1>
         <h2>
             <router-link to="/">Home</router-link>
@@ -18,6 +17,7 @@
         <button @click="setObj">setObj</button>
         <button @click="setObj2">setObj2</button>
         <!-- <button @click.shift="setObj">setObj + Shift</button> -->
+
         <hr class="line" />
         <h3>ReTry</h3>
         <p>num: {{ setNum }}</p>
@@ -29,6 +29,13 @@
             <button class="btn" @click="reset2">reset2</button>
             <button class="btn" @click="division(4)">division</button>
             <!-- <button class="btn" @click="doubleCount">doubleCount</button> -->
+        </p>
+
+        <hr class="line" />
+        <h3>Model</h3>
+        <p>Mode: {{ msgView }}</p>
+        <p>
+            <input type="text" :value="msgView" @input="updateMsg" />
         </p>
     </div>
 </template>
@@ -43,6 +50,9 @@ export default {
         }
     },
     computed: {
+        msgView() {
+            return this.$store.getters.msg
+        },
         ...mapGetters({
             double: 'doubleNum',
             triple: 'tripleNum',
@@ -55,6 +65,9 @@ export default {
         },
     },
     methods: {
+        updateMsg(e) {
+            this.$store.dispatch('updateMsg', e.target.value)
+        },
         ...mapActions(['division']),
         // division(x) {
         //     this.$store.dispatch('division', x)
@@ -97,14 +110,14 @@ export default {
             this.$store.commit('reset')
         },
         //キーコードの表示
-        keyAction(e) {
-            if (e.keyCode == 8) {
-                this.setReset()
-            } else if (e.keyCode == 32) {
-                this.setIncrement()
-            }
-            this.keyNum = e.keyCode
-        },
+        // keyAction(e) {
+        //     if (e.keyCode == 8) {
+        //         this.setReset()
+        //     } else if (e.keyCode == 32) {
+        //         this.setIncrement()
+        //     }
+        //     this.keyNum = e.keyCode
+        // },
     },
     created() {
         //キーコードによる動作の登録
